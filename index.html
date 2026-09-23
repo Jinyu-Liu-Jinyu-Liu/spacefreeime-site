@@ -108,7 +108,7 @@ html[data-lang="zh"] [lang="en"]{display:none}
 @media (prefers-reduced-motion:reduce){.demo .stream .caret{animation:none}}
 
 /* sections */
-section{padding:64px 0;border-top:1px solid var(--line-2)}
+section{padding:64px 0;border-top:1px solid var(--line-2);scroll-margin-top:76px}
 section .head{max-width:40rem;margin-bottom:34px}
 section .head p{margin-top:12px;color:var(--ink-2);font-size:1.08rem}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -144,16 +144,22 @@ section .head p{margin-top:12px;color:var(--ink-2);font-size:1.08rem}
 .rule b{display:block;margin-bottom:4px}
 .rule p{color:var(--ink-2);font-size:.92rem}
 
-/* pricing */
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px}
-@media (max-width:820px){.plans{grid-template-columns:1fr}}
-.plan{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px}
-.plan.now{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.plan .price{font-size:2.2rem;font-weight:700;letter-spacing:-.02em;line-height:1}
-.plan .price small{font-size:1rem;color:var(--ink-3);font-weight:500;margin-left:6px}
-.plan ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:.96rem;display:grid;gap:6px}
-.plan .note{font-size:.85rem;color:var(--ink-3)}
-.plan .btn{align-self:flex-start;margin-top:auto}
+/* one-stream product explanation */
+.flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:stretch}
+.flow-step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.flow-step.result{border-color:var(--ok)}
+.flow-step .label{display:block;color:var(--ink-3);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.flow-step code,.flow-step strong{display:block;font-size:1.13rem;line-height:1.5;overflow-wrap:anywhere}
+.flow-step code{font-family:var(--mono);font-weight:500;color:var(--ink)}
+.flow-step strong{font-weight:600;color:var(--ink)}
+.flow-arrow{align-self:center;color:var(--accent);font-size:2rem;font-weight:700}
+.flow-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+.flow-benefits>span{display:inline-block;background:var(--accent-soft);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:.87rem;font-weight:600}
+.layer.local{border-left:3px solid var(--ok)}
+.layer.ai{border-left:3px solid var(--caret)}
+.beta-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;max-width:760px}
+.beta-card p{color:var(--ink-2);margin:12px 0 22px}
+@media (max-width:700px){.flow{grid-template-columns:1fr;gap:8px}.flow-arrow{justify-self:center;line-height:1;transform:rotate(90deg)}}
 
 /* faq */
 .faq{max-width:760px}
@@ -187,12 +193,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <nav class="nav" aria-label="Sections">
       <a href="#how"><span lang="en">How it works</span><span lang="zh">怎么工作</span></a>
       <a href="#numbers"><span lang="en">Numbers</span><span lang="zh">数据</span></a>
-      <a href="#pricing"><span lang="en">Pricing</span><span lang="zh">价格</span></a>
+      <a href="#beta"><span lang="en">Beta</span><span lang="zh">内测</span></a>
       <a href="#faq"><span lang="en">FAQ</span><span lang="zh">常见问题</span></a>
     </nav>
     <div class="right">
       <button class="langbtn" id="langbtn" type="button" aria-label="Switch language"><span class="on" data-l="en">EN</span>·<span data-l="zh">中文</span></button>
-      <a class="btn primary" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">Join the beta</span><span lang="zh">加入内测</span></a>
+      <a class="btn primary" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">Join the waitlist</span><span lang="zh">加入等候名单</span></a>
     </div>
   </div>
 </header>
@@ -207,8 +213,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <span lang="zh">一个键盘，<br>所有语言，<br><span class="hl">不用切换。</span></span>
       </h1>
       <p class="lead">
-        <span lang="en">Type Chinese pinyin, English and Spanish in one stream. SpaceFreeIME works out which language each part is, then fixes the spacing and spelling. Sign in with your own ChatGPT and it rebuilds whole sentences, punctuation included. You keep typing.</span>
-        <span lang="zh">拼音、英文、西班牙语混在一句里直接打。SpaceFreeIME 自己判断每一段是什么语言，再补好断词和拼写。登录你自己的 ChatGPT，它还会整句重建、补上标点。你只管往下打。</span>
+        <span lang="en">Chinese pinyin, an English term, a Spanish phrase: type them as one stream. SpaceFreeIME offers one mixed-language sentence. The local engine responds first; your own ChatGPT account can refine longer sentences.</span>
+        <span lang="zh">中文拼音、英文术语、西语短句，想到什么就接着打。SpaceFreeIME 给出一条混合语言的候选句：本地先响应，长句再由你自己的 ChatGPT 账号补正。</span>
       </p>
       <div class="cta">
         <a class="btn primary" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">Join the waitlist</span><span lang="zh">加入等候名单</span></a>
@@ -275,23 +281,35 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <div class="head">
       <div class="eyebrow"><span lang="en">How it works</span><span lang="zh">怎么工作</span></div>
-      <h2 style="margin-top:10px"><span lang="en">Two engines, one rule: never make you wait.</span><span lang="zh">两层引擎，一条规矩：不让你等。</span></h2>
+      <h2 style="margin-top:10px"><span lang="en">You type naturally. SpaceFreeIME resolves the language.</span><span lang="zh">你照常输入，语言交给 SpaceFreeIME 处理。</span></h2>
+      <p><span lang="en">One input stream becomes one mixed-language sentence. The example below illustrates the experience, not a recorded engine result.</span><span lang="zh">一条输入流，得到一条混合语言的候选句。下面是体验示意，并非实际引擎录屏。</span></p>
     </div>
-    <div class="grid3">
-      <div class="card">
-        <span class="k">01</span>
-        <h3><span lang="en">You type one stream</span><span lang="zh">你只打一条流</span></h3>
-        <p><span lang="en">Pinyin, English words, Spanish words, in whatever order they come out. No mode key, no mandatory spaces, no word-by-word picking.</span><span lang="zh">拼音、英文、西语，按它们冒出来的顺序打。没有模式键，不强制空格，不逐字选词。</span></p>
+    <div class="flow" aria-label="One mixed-language input becomes one sentence">
+      <div class="flow-step">
+        <span class="label"><span lang="en">One input stream</span><span lang="zh">你只输入一条流</span></span>
+        <code>jintian de meeting gaidao mingtian, porfavor</code>
       </div>
-      <div class="card">
-        <span class="k">02</span>
-        <h3><span lang="en">The local engine answers first</span><span lang="zh">本地引擎先回答</span></h3>
-        <p><span lang="en">Six local dictionary lanes run on your Mac and keep working without a network. We are validating the exact release data, source rights and long-run speed before opening a public installer.</span><span lang="zh">六条本地词典车道在你的 Mac 上运行，断网仍可使用。公开安装包开放前，我们正在核对最终词库、来源许可和长时间运行速度。</span></p>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <div class="flow-step result">
+        <span class="label"><span lang="en">One candidate sentence</span><span lang="zh">一条候选句</span></span>
+        <strong>今天的 meeting 改到明天，por favor。</strong>
       </div>
-      <div class="card">
-        <span class="k">03</span>
-        <h3><span lang="en">AI mode, on your own account</span><span lang="zh">AI 模式，用你自己的账号</span></h3>
-        <p><span lang="en">With a beta activation code from us and your own ChatGPT sign-in, longer sentences get rebuilt whole, with punctuation. Your text goes from your Mac to your own AI account and back. SpaceFreeIME runs no text-processing server.</span><span lang="zh">拿到我们发的内测激活码、登录你自己的 ChatGPT 之后，长句会整句重建、带上标点。文字从你的 Mac 到你自己的 AI 账号再回来。SpaceFreeIME 没有处理文字的服务器。</span></p>
+    </div>
+    <div class="flow-benefits">
+      <span><span lang="en">No mode switching</span><span lang="zh">不切输入法</span></span>
+      <span><span lang="en">No word-by-word selection</span><span lang="zh">不逐词选字</span></span>
+      <span><span lang="en">No mandatory spaces</span><span lang="zh">不强制空格</span></span>
+    </div>
+    <div class="grid2">
+      <div class="card layer local">
+        <span class="k"><span lang="en">Local engine</span><span lang="zh">本地引擎</span></span>
+        <h3><span lang="en">A candidate appears first, even offline.</span><span lang="zh">先给候选，断网也能输入。</span></h3>
+        <p><span lang="en">On-device dictionaries segment and rank the stream without sending ordinary typing to SpaceFree. The exact release data and long-run speed are still being checked.</span><span lang="zh">设备上的词典负责分段与排序，普通输入不发送给 SpaceFree。最终词库和长时间速度仍在验收中。</span></p>
+      </div>
+      <div class="card layer ai">
+        <span class="k"><span lang="en">AI layer · your account</span><span lang="zh">AI 层 · 你的账号</span></span>
+        <h3><span lang="en">Longer sentences can be refined later.</span><span lang="zh">长句随后补正，不挡住继续打字。</span></h3>
+        <p><span lang="en">If you enable AI, the necessary text goes directly to the provider you connect with your own account. SpaceFree's invite service does not process that text.</span><span lang="zh">启用 AI 后，必要文字直达你用自己账号连接的服务商；SpaceFree 的邀请服务不处理这些正文。</span></p>
       </div>
     </div>
     <div class="rules">
@@ -312,7 +330,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="tile"><div class="big">6</div><div class="lab"><span lang="en">language lanes in the internal build</span><span lang="zh">条语言车道参与内部测试</span></div><div class="src"><span lang="en">Chinese pinyin, English, Spanish, French, German and Japanese romaji. Mixed-sentence behavior remains part of release validation.</span><span lang="zh">中文拼音、英语、西班牙语、法语、德语和日语罗马字。混合句仍在发布验收范围内。</span></div></div>
       <div class="tile"><div class="big">~10<small>ms</small></div><div class="lab"><span lang="en">local keystroke target</span><span lang="zh">本地按键响应目标</span></div><div class="src"><span lang="en">Internal synthetic probes on Apple Silicon; real-app long-run acceptance is still in progress.</span><span lang="zh">Apple Silicon 合成探针；真实应用中的长时间验收仍在进行。</span></div></div>
       <div class="tile"><div class="big">100</div><div class="lab"><span lang="en">real sentences in our internal AI comparison</span><span lang="zh">句真实句子参与内部 AI 对照</span></div><div class="src"><span lang="en">The same de-identified set was used across six models; this is a reference comparison, not a claim of live typing accuracy.</span><span lang="zh">同一批去隐私样本比较了六个模型；它是参考对照，不代表真实输入的最终准确率。</span></div></div>
-      <div class="tile"><div class="big">83.2<small>%</small></div><div class="lab"><span lang="en">whole sentences right, local engine alone</span><span lang="zh">整句正确率，仅本地引擎</span></div><div class="src"><span lang="en">91.6% by character · 2,505-sentence internal Chinese benchmark, build 6.6.240, Sept 2026</span><span lang="zh">按字 91.6% · 2,505 句内部中文基准，6.6.240 版，2026 年 9 月</span></div></div>
+      <div class="tile"><div class="big">83.2<small>%</small></div><div class="lab"><span lang="en">historical exact-string match, local engine</span><span lang="zh">历史内部基准整句逐字一致率</span></div><div class="src"><span lang="en">2,505 Chinese sentences, build 6.6.240. Not a human-rated intent score or a live-host result.</span><span lang="zh">6.6.240 版、2,505 句中文样本；不是人工语义评分，也不是装机宿主实测。</span></div></div>
     </div>
   </div>
 </section>
@@ -332,37 +350,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   </div>
 </section>
 
-<section id="pricing">
+<section id="beta">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow"><span lang="en">Pricing</span><span lang="zh">价格</span></div>
-      <h2 style="margin-top:10px"><span lang="en">Free while it is in beta.</span><span lang="zh">内测期间免费。</span></h2>
-      <p><span lang="en">The beta is invite-only and costs nothing. The launch price is shown so you can tell us now whether it is worth it. Nobody is charged today.</span><span lang="zh">内测邀请制，不收费。先把上线价格写出来，你可以现在就告诉我们值不值。今天不会向任何人收费。</span></p>
-    </div>
-    <div class="plans">
-      <div class="plan now">
-        <div class="eyebrow"><span lang="en">Now</span><span lang="zh">现在</span></div>
-        <div class="price">$0<small><span lang="en">beta</span><span lang="zh">内测</span></small></div>
-        <ul>
-          <li><span lang="en">Full local engine, six languages, offline</span><span lang="zh">完整本地引擎，六种语言，离线可用</span></li>
-          <li><span lang="en">AI sentence mode: a 90-day beta activation code from us, renewed while the beta runs, plus your own ChatGPT sign-in</span><span lang="zh">AI 整句模式：我们发的 90 天内测激活码（内测期间续发），加上你自己的 ChatGPT 登录</span></li>
-          <li><span lang="en">Direct line to the person who builds it</span><span lang="zh">直接联系做它的人</span></li>
-        </ul>
-        <p class="note"><span lang="en">Invites are sent by hand. Tell us how you type and we will get to you faster.</span><span lang="zh">邀请由人工逐个发出。告诉我们你平时怎么打字，会更快轮到你。</span></p>
-        <a class="btn primary" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">Join the waitlist</span><span lang="zh">加入等候名单</span></a>
-      </div>
-      <div class="plan">
-        <div class="eyebrow"><span lang="en">At launch</span><span lang="zh">上线后</span></div>
-        <div class="price" id="launchprice">$3.99<small><span lang="en">one-time, per Mac</span><span lang="zh">一次付费，每台 Mac</span></small></div>
-        <ul>
-          <li><span lang="en">Unlocks AI sentence mode and two years of updates</span><span lang="zh">解锁 AI 整句模式，含两年更新</span></li>
-          <li><span lang="en">The local engine stays free for everyone, forever</span><span lang="zh">本地引擎对所有人永久免费</span></li>
-          <li><span lang="en">No subscription. Your AI runs on your own account, so we have no token bill to pass on.</span><span lang="zh">不订阅。AI 跑在你自己的账号上，我们没有 token 账单要转嫁给你。</span></li>
-          <li><span lang="en">Beta users lock in $2.99</span><span lang="zh">内测用户锁定 $2.99</span></li>
-        </ul>
-        <p class="note"><span lang="en">Would you pay this? Say so on the waitlist form. Your answers set the final number.</span><span lang="zh">你愿意付这个价吗？在等候名单表里告诉我们。最终价格由你们的回答定。</span></p>
-        <a class="btn ghost" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">I would pay this</span><span lang="zh">我愿意付</span></a>
-      </div>
+    <div class="beta-card">
+      <div class="eyebrow"><span lang="en">Invite beta</span><span lang="zh">邀请制内测</span></div>
+      <h2 style="margin-top:10px"><span lang="en">See it when the installer is ready.</span><span lang="zh">安装包准备好后，来亲手试试。</span></h2>
+      <p><span lang="en">The public download is still closed while we finish installation and long-run checks. Join the waitlist for progress and future invitations; no installer is offered on this page yet.</span><span lang="zh">我们还在完成装机和长时间运行检查，公开下载暂未开放。加入等候名单即可接收进展与后续邀请；此页目前不提供安装包。</span></p>
+      <a class="btn primary" href="https://forms.gle/rMJLESsgVijqDERD9" target="_blank" rel="noopener"><span lang="en">Join the waitlist</span><span lang="zh">加入等候名单</span></a>
     </div>
   </div>
 </section>
@@ -377,7 +371,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <details><summary><span lang="en">Which languages and platforms?</span><span lang="zh">支持哪些语言和平台？</span></summary><p><span lang="en">Today: macOS 13 or later on Apple Silicon. Chinese pinyin, English, Spanish, French, German and Japanese romaji can be mixed in one sentence. iOS, Android and Windows ports run the same engine and are in development; there is no date yet.</span><span lang="zh">目前：macOS 13 及以上，Apple Silicon。中文拼音、英语、西班牙语、法语、德语、日语罗马字可以混在一句里。iOS、Android 和 Windows 版跑同一套引擎，正在开发，还没有日期。</span></p></details>
       <details><summary><span lang="en">Does it need the internet?</span><span lang="zh">必须联网吗？</span></summary><p><span lang="en">No. The local engine does everything offline. A beta activation code plus your ChatGPT sign-in adds the AI sentence mode for longer, mixed sentences.</span><span lang="zh">不用。本地引擎离线完成全部工作。有内测激活码并登录 ChatGPT 后，长句和混合句会多一个 AI 整句模式。</span></p></details>
       <details><summary><span lang="en">Can you read what I type?</span><span lang="zh">你们能看到我打的内容吗？</span></summary><p><span lang="en">Ordinary local typing stays on your Mac. If you enable AI, the necessary input and context go directly to the AI provider you choose through your own account; SpaceFree does not proxy those model calls. Our invite service receives license requests, not typed text. Optional coarse product analytics will require separate consent and are not enabled for this public waitlist.</span><span lang="zh">普通本地输入留在你的 Mac 上。若启用 AI，必要输入和上下文会通过你自己的账号直接发给所选 AI 服务商；SpaceFree 不转发模型请求。我们的邀请服务只接收资格请求，不接收输入正文。可选的粗粒度产品统计需要单独同意，在这个公开等候页面上尚未启用。</span></p></details>
-      <details><summary><span lang="en">Why sign in with my own AI account?</span><span lang="zh">为什么要用我自己的 AI 账号？</span></summary><p><span lang="en">Because it keeps three things honest: your text stays yours, you keep your own account, model tier and limits, and we never have to raise the price to cover someone else's tokens. OpenAI accounts are supported today; other providers are not yet.</span><span lang="zh">因为这样三件事都干净：文字是你的，账号、模型档位和额度也是你自己的，我们也永远不用为了别人的 token 涨价。目前支持 OpenAI 账号，其他服务商还没有。</span></p></details>
+      <details><summary><span lang="en">Why sign in with my own AI account?</span><span lang="zh">为什么要用我自己的 AI 账号？</span></summary><p><span lang="en">You keep control of your provider account, model access and limits. AI requests go directly from your Mac to that provider instead of through a SpaceFree text server. The invite only controls eligibility for the AI feature.</span><span lang="zh">服务商账号、可用模型和额度仍由你自己掌控。AI 请求从你的 Mac 直达服务商，不经过 SpaceFree 的文字服务器；邀请码只用来核对 AI 功能的测试资格。</span></p></details>
       <details><summary><span lang="en">Intel Macs?</span><span lang="zh">Intel 的 Mac 能用吗？</span></summary><p><span lang="en">Not yet. The beta ships for Apple Silicon only.</span><span lang="zh">暂时不能。内测版只提供 Apple Silicon 版本。</span></p></details>
       <details><summary><span lang="en">Is it patented?</span><span lang="zh">有专利吗？</span></summary><p><span lang="en">Three U.S. provisional applications were filed pro se between September 2025 and May 2026, covering space-free whole-sentence decoding, provider-agnostic BYO-AI routing, and hardware-key-position layout decoding. The first has lapsed; two remain on file. Provisional applications are not granted patents and confer no enforceable rights.</span><span lang="zh">2025 年 9 月到 2026 年 5 月间自行递交了三项美国临时专利申请，涵盖无空格整句解码、不绑定服务商的 BYO-AI 路由、按键物理位置的键盘布局解码。第一项已失效，两项仍在案。临时申请不是授权专利，不产生可执行的权利。</span></p></details>
     </div>
