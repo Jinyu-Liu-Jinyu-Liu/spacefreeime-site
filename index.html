@@ -218,6 +218,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <span lang="en">macOS 13 or later · Apple Silicon · The local engine works offline. AI mode needs a beta code from us plus your own ChatGPT sign-in.</span>
         <span lang="zh">macOS 13 及以上 · Apple Silicon · 本地引擎离线可用。AI 模式需要我们发的内测码，加上你自己的 ChatGPT 登录。</span>
       </p>
+      <p class="fine">
+        <span lang="en">The installer is not publicly available yet. The waitlist is for updates and future invitations.</span>
+        <span lang="zh">安装包目前尚未公开。等候名单用于接收进展和后续邀请。</span>
+      </p>
     </div>
 
     <div class="demo" aria-label="Mock-up of the candidate window">
@@ -282,7 +286,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="card">
         <span class="k">02</span>
         <h3><span lang="en">The local engine answers first</span><span lang="zh">本地引擎先回答</span></h3>
-        <p><span lang="en">A 4.8-million-entry lexicon across six languages, compiled only from permissively licensed and first-party data, runs on your Mac. It segments, corrects and ranks in about 10 ms and keeps working with no network.</span><span lang="zh">六种语言、480 万条的词库在你的 Mac 上跑，只用宽松许可和自建数据。它负责断词、纠错、排序，大约 10 毫秒出结果，断网照常工作。</span></p>
+        <p><span lang="en">Six local dictionary lanes run on your Mac and keep working without a network. We are validating the exact release data, source rights and long-run speed before opening a public installer.</span><span lang="zh">六条本地词典车道在你的 Mac 上运行，断网仍可使用。公开安装包开放前，我们正在核对最终词库、来源许可和长时间运行速度。</span></p>
       </div>
       <div class="card">
         <span class="k">03</span>
@@ -293,7 +297,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="rules">
       <div class="rule"><b><span lang="en">Leave the text alone when unsure.</span><span lang="zh">拿不准就不动。</span></b><p><span lang="en">Plain ASCII passes through untouched, and when the engine cannot decide it prefers your text as typed over its own guess.</span><span lang="zh">纯 ASCII 原样通过；引擎判断不了时，宁可保留你敲的原文，也不硬猜。</span></p></div>
       <div class="rule"><b><span lang="en">Password fields are off-limits.</span><span lang="zh">密码框不碰。</span></b><p><span lang="en">Secure text fields get the plain system keyboard. Nothing is composed, nothing is sent.</span><span lang="zh">安全输入框只用系统原生键盘。不组词，不发送。</span></p></div>
-      <div class="rule"><b><span lang="en">No win, no ship.</span><span lang="zh">不赢不上。</span></b><p><span lang="en">Ranking changes are scored on a hash-locked holdout the model has never seen. A change that does not win does not ship, and everything else must at least not regress the release benchmark.</span><span lang="zh">排序改动在模型从未见过的哈希锁定测试集上打分。赢不了就不上；其他改动至少不能让发布基准退步。</span></p></div>
+      <div class="rule"><b><span lang="en">Measure before release.</span><span lang="zh">先验证，再发布。</span></b><p><span lang="en">Candidate changes are compared on pinned accuracy and runtime checks. The public installer opens only after its release gates and Mac installation checks pass.</span><span lang="zh">候选改动会经过固定的准确率与运行检查。正式安装包要等发布门槛和 Mac 装机检查通过后才开放。</span></p></div>
     </div>
   </div>
 </section>
@@ -305,9 +309,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <h2 style="margin-top:10px"><span lang="en">Measured, not promised.</span><span lang="zh">量出来的，不是许诺的。</span></h2>
     </div>
     <div class="tiles">
-      <div class="tile"><div class="big">6</div><div class="lab"><span lang="en">languages in one sentence</span><span lang="zh">种语言可以混在一句里</span></div><div class="src"><span lang="en">Six shipped dictionaries: Chinese (pinyin), English, Spanish, French, German, Japanese (romaji). Mixed-sentence accuracy not yet benchmarked.</span><span lang="zh">六套出货词库：中文拼音、英语、西班牙语、法语、德语、日语罗马字。混合句准确率尚未做基准测试。</span></div></div>
-      <div class="tile"><div class="big">~10<small>ms</small></div><div class="lab"><span lang="en">local response per keystroke</span><span lang="zh">本地引擎每次按键的响应</span></div><div class="src"><span lang="en">measured on Apple Silicon, offline</span><span lang="zh">Apple Silicon 离线实测</span></div></div>
-      <div class="tile"><div class="big">4.8<small>M</small></div><div class="lab"><span lang="en">lexicon entries on device</span><span lang="zh">条词库在设备上</span></div><div class="src"><span lang="en">MIT, BSD, Apache-2.0, CC-BY-4.0, CC0 and our own data. GPL and share-alike sources never ship.</span><span lang="zh">MIT、BSD、Apache-2.0、CC-BY-4.0、CC0 和自建数据。GPL 与相同方式共享来源一律不出货。</span></div></div>
+      <div class="tile"><div class="big">6</div><div class="lab"><span lang="en">language lanes in the internal build</span><span lang="zh">条语言车道参与内部测试</span></div><div class="src"><span lang="en">Chinese pinyin, English, Spanish, French, German and Japanese romaji. Mixed-sentence behavior remains part of release validation.</span><span lang="zh">中文拼音、英语、西班牙语、法语、德语和日语罗马字。混合句仍在发布验收范围内。</span></div></div>
+      <div class="tile"><div class="big">~10<small>ms</small></div><div class="lab"><span lang="en">local keystroke target</span><span lang="zh">本地按键响应目标</span></div><div class="src"><span lang="en">Internal synthetic probes on Apple Silicon; real-app long-run acceptance is still in progress.</span><span lang="zh">Apple Silicon 合成探针；真实应用中的长时间验收仍在进行。</span></div></div>
+      <div class="tile"><div class="big">100</div><div class="lab"><span lang="en">real sentences in our internal AI comparison</span><span lang="zh">句真实句子参与内部 AI 对照</span></div><div class="src"><span lang="en">The same de-identified set was used across six models; this is a reference comparison, not a claim of live typing accuracy.</span><span lang="zh">同一批去隐私样本比较了六个模型；它是参考对照，不代表真实输入的最终准确率。</span></div></div>
       <div class="tile"><div class="big">83.2<small>%</small></div><div class="lab"><span lang="en">whole sentences right, local engine alone</span><span lang="zh">整句正确率，仅本地引擎</span></div><div class="src"><span lang="en">91.6% by character · 2,505-sentence internal Chinese benchmark, build 6.6.240, Sept 2026</span><span lang="zh">按字 91.6% · 2,505 句内部中文基准，6.6.240 版，2026 年 9 月</span></div></div>
     </div>
   </div>
@@ -372,7 +376,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="faq">
       <details><summary><span lang="en">Which languages and platforms?</span><span lang="zh">支持哪些语言和平台？</span></summary><p><span lang="en">Today: macOS 13 or later on Apple Silicon. Chinese pinyin, English, Spanish, French, German and Japanese romaji can be mixed in one sentence. iOS, Android and Windows ports run the same engine and are in development; there is no date yet.</span><span lang="zh">目前：macOS 13 及以上，Apple Silicon。中文拼音、英语、西班牙语、法语、德语、日语罗马字可以混在一句里。iOS、Android 和 Windows 版跑同一套引擎，正在开发，还没有日期。</span></p></details>
       <details><summary><span lang="en">Does it need the internet?</span><span lang="zh">必须联网吗？</span></summary><p><span lang="en">No. The local engine does everything offline. A beta activation code plus your ChatGPT sign-in adds the AI sentence mode for longer, mixed sentences.</span><span lang="zh">不用。本地引擎离线完成全部工作。有内测激活码并登录 ChatGPT 后，长句和混合句会多一个 AI 整句模式。</span></p></details>
-      <details><summary><span lang="en">Can you read what I type?</span><span lang="zh">你们能看到我打的内容吗？</span></summary><p><span lang="en">No. SpaceFreeIME runs no text-processing server. In AI mode your text goes from your Mac to your own ChatGPT account and back. The app contacts our servers only to check its activation and to report performance timings, never what you type. Release configuration carries no developer credentials, no API key and no proxy address; an automated test checks this on every build.</span><span lang="zh">不能。SpaceFreeIME 没有处理文字的服务器。AI 模式下，文字从你的 Mac 到你自己的 ChatGPT 账号再回来。App 只为核对激活状态和上报性能耗时而联系我们的服务器，从不上传你打的内容。正式配置里没有开发者凭据、API 密钥和代理地址，每次构建都有自动测试检查这一点。</span></p></details>
+      <details><summary><span lang="en">Can you read what I type?</span><span lang="zh">你们能看到我打的内容吗？</span></summary><p><span lang="en">Ordinary local typing stays on your Mac. If you enable AI, the necessary input and context go directly to the AI provider you choose through your own account; SpaceFree does not proxy those model calls. Our invite service receives license requests, not typed text. Optional coarse product analytics will require separate consent and are not enabled for this public waitlist.</span><span lang="zh">普通本地输入留在你的 Mac 上。若启用 AI，必要输入和上下文会通过你自己的账号直接发给所选 AI 服务商；SpaceFree 不转发模型请求。我们的邀请服务只接收资格请求，不接收输入正文。可选的粗粒度产品统计需要单独同意，在这个公开等候页面上尚未启用。</span></p></details>
       <details><summary><span lang="en">Why sign in with my own AI account?</span><span lang="zh">为什么要用我自己的 AI 账号？</span></summary><p><span lang="en">Because it keeps three things honest: your text stays yours, you keep your own account, model tier and limits, and we never have to raise the price to cover someone else's tokens. OpenAI accounts are supported today; other providers are not yet.</span><span lang="zh">因为这样三件事都干净：文字是你的，账号、模型档位和额度也是你自己的，我们也永远不用为了别人的 token 涨价。目前支持 OpenAI 账号，其他服务商还没有。</span></p></details>
       <details><summary><span lang="en">Intel Macs?</span><span lang="zh">Intel 的 Mac 能用吗？</span></summary><p><span lang="en">Not yet. The beta ships for Apple Silicon only.</span><span lang="zh">暂时不能。内测版只提供 Apple Silicon 版本。</span></p></details>
       <details><summary><span lang="en">Is it patented?</span><span lang="zh">有专利吗？</span></summary><p><span lang="en">Three U.S. provisional applications were filed pro se between September 2025 and May 2026, covering space-free whole-sentence decoding, provider-agnostic BYO-AI routing, and hardware-key-position layout decoding. The first has lapsed; two remain on file. Provisional applications are not granted patents and confer no enforceable rights.</span><span lang="zh">2025 年 9 月到 2026 年 5 月间自行递交了三项美国临时专利申请，涵盖无空格整句解码、不绑定服务商的 BYO-AI 路由、按键物理位置的键盘布局解码。第一项已失效，两项仍在案。临时申请不是授权专利，不产生可执行的权利。</span></p></details>
